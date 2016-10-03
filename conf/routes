@@ -1,0 +1,31 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                                controllers.HomeController.index
+# An example controller showing how to use dependency injection
+GET     /count                           controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET     /message                         controllers.AsyncController.message
+
+# Add by cristiano tutorial : https://www.youtube.com/watch?v=eNCerkVyQdc&feature=youtu.be
+GET     /SormCoffeescript/index          controllers.DbSormCoffescript.index
+POST    /SormCoffeescript/person         controllers.DbSormCoffescript.addPerson
+GET     /SormCoffeescript/persons        controllers.DbSormCoffescript.getPersons
+
+# Ajax call
+GET     /ajax_call/index                 controllers.AjaxCall.index
+GET     /ajax_call/user_name_ajax/:id    controllers.AjaxCall.user(id:Long)
+
+# Session example
+GET     /SessionTest/index               controllers.SessionTest.index
+GET     /SessionTest/cleanSession        controllers.SessionTest.cleanSession
+POST    /SessionTest/addInSession        controllers.SessionTest.addInSession
+
+
+
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file                    controllers.Assets.versioned(path="/public", file: Asset)

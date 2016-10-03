@@ -1,0 +1,42 @@
+@*
+ * This template takes a single argument, a String containing a
+ * message to display.
+ *@
+@(message: String)
+
+@*
+ * Call the `main` template with two arguments. The first
+ * argument is a `String` with the title of the page, the second
+ * argument is an `Html` object containing the body of the page.
+ *@
+@main("Home Examples") {
+
+    @*
+     * Get an `Html` object by calling the built-in Play welcome
+     * template and passing a `String` message.
+     *@
+    @* @play20.welcome(message, style = "Scala") *@
+
+    <h1>Test list</h1>
+    <hr>
+    <h4>
+        Default template, Counter : <a href="@routes.CountController.count">count</a>
+    </h4>
+    <hr>
+    <h4>
+        Default template, AsyncController : <a href="@routes.AsyncController.message">message</a>
+    </h4>
+    <hr>
+    <h4>
+        Test Db orm sorm, coffescript html form post : <a href="@routes.DbSormCoffescript.index">index</a>
+    </h4>
+    <hr>
+    <h4>
+        Test Ajax jquery call : <a href="@routes.AjaxCall.index">index</a>
+    </h4>
+    <hr>
+    <h4>
+        Test HttpSession : <a href="@routes.SessionTest.index">index</a>
+    </h4>
+
+}

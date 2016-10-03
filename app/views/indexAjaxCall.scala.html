@@ -1,0 +1,28 @@
+@(message: String)
+
+@main("Title page") {
+
+<br>
+<hr>
+<p>@message</p>
+<div class="result" style="border: 1px solid black; padding: 5px;">not sent yet...</div>
+
+<div id="items">
+    <a href="@routes.AjaxCall.user(1)">Select user 1</a>
+    <a href="@routes.AjaxCall.user(2)">Select user 2</a>
+    <a href="@routes.AjaxCall.user(3)">Select user 3</a>
+</div>
+
+<script type="text/javascript">
+        jQuery("#items a").click(
+            function () {
+                $.get(jQuery(this).attr("href"), function (data) {
+                    $('.result').html(data);
+                });
+                return false;
+            }
+        )
+</script>
+
+
+}

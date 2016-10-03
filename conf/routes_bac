@@ -1,0 +1,29 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Add by cristiano tutorial : https://www.youtube.com/watch?v=eNCerkVyQdc&feature=youtu.be
+GET     /                                controllers.Application.index
+POST    /person                          controllers.Application.addPerson
+GET     /persons                         controllers.Application.getPersons
+
+# Ajax call
+GET     /user_name_ajax/:id              controllers.Application.user(id:Long)
+
+# Session example
+GET    /cleanSession                    controllers.Application.cleanSession
+POST    /addInSession                    controllers.Application.addInSession
+
+
+
+
+
+# An example controller showing a sample home page
+GET     /indexHomeController             controllers.HomeController.indexHomeController
+# An example controller showing how to use dependency injection
+GET     /count                           controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET     /message                         controllers.AsyncController.message
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file                    controllers.Assets.versioned(path="/public", file: Asset)

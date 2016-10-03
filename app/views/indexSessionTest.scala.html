@@ -1,0 +1,16 @@
+@(message: String)
+
+@main("Title page") {
+
+<br>
+<hr>
+<p>@message</p>
+
+<a href="@routes.SessionTest.cleanSession">clean session</a>
+
+<form action="@routes.SessionTest.addInSession" method="post">
+    <input name="valueInSession" type="text">
+    <button>Test Session</button>
+</form>
+
+}
